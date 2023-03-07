@@ -1,13 +1,14 @@
-import './App.css'
+import React from 'react'
+import '../src/App.css'
 import Card from './Components/Card'
+import Form from './Components/Form'
 
-function App() {
-  return(
-  <div ClassName="App">
-    <h1>Carga de estudiantes</h1>
-    <form></form>
-    <Card />
-  </div>
+const App = () => {
+  return (
+    <div>
+      <Form/>
+      <Card/>
+    </div>
   )
 }
 
