@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Card from './Card'
 
 const Form = () => {
@@ -12,7 +12,7 @@ const Form = () => {
 
   const handleSubmit = (event) => {
       event.preventDefault()
-      if(usuario.nombre.length > 3){
+      if(usuario.nombre.length > 3 && usuario.nombre != " " && usuario.apto.length >6){
           setShow(true)
           setErr(false)
       } else {
@@ -24,13 +24,13 @@ const Form = () => {
   return (
     <div>
       <h1>Lista de inscripción de apartamentos</h1>
-        <form>
+        <form onSubmit={handleSubmit}>
           <label>Nombre</label>
           <input type="text" value={usuario.nombre} onChange={(e) => setUser({...usuario, nombre: e.target.value})}/>
           <label>Apartamento</label>
           <input type="text" value={usuario.apto} onChange={(e) => setUser({...usuario, apto: e.target.value})}/>
           
-          <button>Enviar</button>
+          <button type='submit'>Enviar</button>
         
         </form>
 
